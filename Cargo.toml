@@ -1,0 +1,15 @@
+[package]
+name = "ntfs-3g-sys"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+doctest = false
+
+[dependencies]
+libc = "0.2"
+
+[build-dependencies]
+autotools = "0.2"
+bindgen = "0.53"
+rm_rf = "0.6"

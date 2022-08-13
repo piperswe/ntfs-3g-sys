@@ -1,0 +1,20 @@
+--- ntfs-3g/libntfs-3g/Makefile.in	2022-05-17 01:38:41.000000000 -0500
++++ ntfs-3g/libntfs-3g/Makefile.in	2022-08-13 13:54:37.000000000 -0500
+@@ -1168,9 +1168,6 @@
+ # We may need to move .so files to root
+ # And create ldscript or symbolic link from /usr
+ install-exec-hook: install-rootlibLTLIBRARIES
+-@INSTALL_LIBRARY_TRUE@	if [ ! "$(rootlibdir)" -ef "$(libdir)" ]; then \
+-@INSTALL_LIBRARY_TRUE@		$(MV) -f "$(DESTDIR)/$(libdir)"/libntfs-3g.so* "$(DESTDIR)/$(rootlibdir)";  \
+-@INSTALL_LIBRARY_TRUE@	fi
+ @GENERATE_LDSCRIPT_TRUE@@INSTALL_LIBRARY_TRUE@	if [ ! "$(rootlibdir)" -ef "$(libdir)" ]; then \
+ @GENERATE_LDSCRIPT_TRUE@@INSTALL_LIBRARY_TRUE@		$(install_sh_PROGRAM) "libntfs-3g.script.so" "$(DESTDIR)/$(libdir)/libntfs-3g.so"; \
+ @GENERATE_LDSCRIPT_TRUE@@INSTALL_LIBRARY_TRUE@	fi
+@@ -1179,7 +1176,6 @@
+ @GENERATE_LDSCRIPT_FALSE@@INSTALL_LIBRARY_TRUE@	fi
+ 
+ uninstall-local:
+-@INSTALL_LIBRARY_TRUE@	$(RM) -f "$(DESTDIR)/$(rootlibdir)"/libntfs-3g.so*
+ 
+ @ENABLE_NTFSPROGS_TRUE@libs:	$(lib_LTLIBRARIES)
+ 
