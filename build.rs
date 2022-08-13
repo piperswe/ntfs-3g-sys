@@ -26,6 +26,7 @@ fn main() {
         .header("wrapper.h")
         .parse_callbacks(Box::new(bindgen::CargoCallbacks))
         .clang_arg(format!("-I{}/include/ntfs-3g", dst.display()))
+        .whitelist_function("ntfs_.*")
         .generate()
         .expect("Unable to generate bindings");
 
