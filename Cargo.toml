@@ -12,9 +12,6 @@ categories = ["external-ffi-bindings"]
 [lib]
 doctest = false
 
-[dependencies]
-libc = "0.2"
-
 [build-dependencies]
 autotools = "0.2"
 bindgen = "0.53"
