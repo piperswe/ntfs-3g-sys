@@ -2,6 +2,12 @@
 name = "ntfs-3g-sys"
 version = "0.1.0"
 edition = "2021"
+license = "GPL-2.0"
+description = "FFI bindings to libntfs-3g"
+homepage = "https://github.com/piperswe/ntfs-3g-sys"
+repository = "https://github.com/piperswe/ntfs-3g-sys"
+keywords = ["ntfs"]
+categories = ["external-ffi-bindings"]
 
 [lib]
 doctest = false
